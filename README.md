@@ -152,13 +152,17 @@ Render 可以直接部署 docker 镜像,不需要 fork 仓库：[Render](https:/
 
 ## 进阶配置
 
-免费用户仅可使用`gpt-4o-mini`,绑卡后试用`3`天可使用`claude-3-7-sonnet`、`claude-3-7-sonnet-thinking`。
+无
 
 ## 支持模型
+
+> 免费用户仅可使用`gpt-4o-mini`,绑卡后试用`3`天可使用`claude-3-7-sonnet`、`claude-3-7-sonnet-thinking`。
+
 
 | 模型名称                       | 类型   |
 |----------------------------|------|
 | gpt-4o-mini                | FREE |
+| o3-mini                    | PLUS |
 | claude-3-7-sonnet          | PLUS |
 | claude-3-7-sonnet-thinking | PLUS |
 
