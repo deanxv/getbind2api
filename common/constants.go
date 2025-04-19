@@ -3,7 +3,7 @@ package common
 import "time"
 
 var StartTime = time.Now().Unix() // unit: second
-var Version = "v1.1.12"           // this hard coding will be replaced automatically when building, no need to manually change
+var Version = "v1.0.0"            // this hard coding will be replaced automatically when building, no need to manually change
 
 type ModelInfo struct {
 	Model     string
