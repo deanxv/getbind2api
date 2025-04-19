@@ -1,0 +1,16 @@
+.idea
+.vscode
+upload
+*.exe
+*.db
+build
+*.db-journal
+logs
+data
+dist
+/web/node_modules
+/web/node_modules
+cmd.md
+.env
+temp
+.DS_Store

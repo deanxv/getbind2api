@@ -1,0 +1,98 @@
+definitions:
+  common.ResponseResult:
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+    type: object
+  model.OpenAIChatCompletionRequest:
+    properties:
+      max_tokens:
+        type: integer
+      messages:
+        items:
+          $ref: '#/definitions/model.OpenAIChatMessage'
+        type: array
+      model:
+        type: string
+      stream:
+        type: boolean
+    type: object
+  model.OpenAIChatMessage:
+    properties:
+      content: {}
+      role:
+        type: string
+    type: object
+  model.OpenaiModelListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/model.OpenaiModelResponse'
+        type: array
+      object:
+        type: string
+    type: object
+  model.OpenaiModelResponse:
+    properties:
+      id:
+        type: string
+      object:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: HIX-AI-2API
+  title: HIX-AI-2API
+  version: 1.0.0
+paths:
+  /v1/chat/completions:
+    post:
+      consumes:
+      - application/json
+      description: OpenAI对话接口
+      parameters:
+      - description: OpenAI对话请求
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/model.OpenAIChatCompletionRequest'
+      - description: Authorization API-KEY
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - OpenAI
+  /v1/models:
+    get:
+      consumes:
+      - application/json
+      description: OpenAI模型列表接口
+      parameters:
+      - description: Authorization API-KEY
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功
+          schema:
+            allOf:
+            - $ref: '#/definitions/common.ResponseResult'
+            - properties:
+                data:
+                  $ref: '#/definitions/model.OpenaiModelListResponse'
+              type: object
+      tags:
+      - OpenAI
+swagger: "2.0"

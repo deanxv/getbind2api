@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  getbind2api:
+    image: deanxv/getbind2api:latest
+    container_name: getbind2api
+    restart: always
+    ports:
+      - "10055:10055"
+    volumes:
+      - ./data:/app/getbind2api/data
+    environment:
+      - GB_COOKIE=******  # cookie (多个请以,分隔)
+      - API_SECRET=123456  # [可选]接口密钥-修改此行为请求头校验的值(多个请以,分隔)
+      - TZ=Asia/Shanghai
